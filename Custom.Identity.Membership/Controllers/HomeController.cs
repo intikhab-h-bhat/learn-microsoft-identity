@@ -1,4 +1,5 @@
 using Custom.Identity.Membership.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -13,11 +14,13 @@ namespace Custom.Identity.Membership.Controllers
             _logger = logger;
         }
 
+      
         public IActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();
